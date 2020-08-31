@@ -1,0 +1,13 @@
+﻿<tianxia:BlurWindow x:Class="Qzone.View.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Qzone.View"
+        xmlns:tianxia="clr-namespace:TianXiaTech;assembly=BlurWindow"
+        mc:Ignorable="d"
+        Title="QQ登录" Height="350" Width="550" WindowStyle="SingleBorderWindow" Background="White" TitleForeground="#FF4B6CDA" Icon="../Icon/qq.png" ResizeMode="NoResize" ShowInTaskbar="False">
+    <Grid>
+        
+    </Grid>
+</tianxia:BlurWindow>
