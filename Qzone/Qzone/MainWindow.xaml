@@ -6,7 +6,7 @@
         xmlns:tianxia="clr-namespace:TianXiaTech;assembly=BlurWindow"
         xmlns:local="clr-namespace:Qzone"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="White">
+        Title="MainWindow" Height="600" Width="800" Background="White">
     <Grid>
 
     </Grid>

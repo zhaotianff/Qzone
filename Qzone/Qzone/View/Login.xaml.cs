@@ -23,7 +23,7 @@ namespace Qzone.View
         {
             InitializeComponent();
 
-            LoadBackgroundImageAsync();
+            LoadLoginPage();
         }
 
         private async void LoadBackgroundImageAsync()
@@ -43,6 +43,38 @@ namespace Qzone.View
             bi.EndInit();
             ib.ImageSource = bi;
             this.Background = ib;
+        }
+
+        private async void LoadLoginPage()
+        {
+            var chromium = ChromiumHelper.GetChromium();
+            await chromium.InitBrowser();
+            chromium.SetTargetChangedHandler(NavigateToQzone);
+            await chromium.LaunchUrl(QzoneUrl.LoginUrl);            
+            using(System.IO.Stream stream = await chromium.Screenshot())
+            {
+                System.Drawing.Bitmap bitmap = (System.Drawing.Bitmap)System.Drawing.Bitmap.FromStream(stream);
+                var hBitmap = bitmap.GetHbitmap();
+
+                try
+                {
+                    var source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hBitmap, IntPtr.Zero, Int32Rect.Empty, System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions());
+                    ImageBrush ib = new ImageBrush();
+                    ib.ImageSource = source;
+                    ib.Stretch = Stretch.UniformToFill;
+                    this.Background = ib;
+                }
+                finally
+                {
+                    WinAPI.DeleteObject(hBitmap);
+                }
+                
+            }
+        }
+
+        private void NavigateToQzone(object sender, PuppeteerSharp.TargetChangedArgs args)
+        {
+            
         }
     }
 }

@@ -4,6 +4,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+	<UseWindowsForms>true</UseWindowsForms>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +14,7 @@
 
   <ItemGroup>
     <PackageReference Include="BlurWindow" Version="2.0.0" />
+    <PackageReference Include="PuppeteerSharp" Version="2.0.4" />
   </ItemGroup>
 
   <ItemGroup>
