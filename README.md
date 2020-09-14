@@ -21,20 +21,27 @@ Visual Studio 2019 + .Net Core 3.1
 
 ## 功能说明
 扫码登录后，会随机显示一条历史说说，F5键可以刷新。  
-> 扫码链接为官方链接，请放心扫描
+> 扫码链接为官方链接，请放心扫描  
 > 无恶意代码，不会对你的账号造成影响
 
 ## 界面截图
 <div align="center">
     <img align="center" src="Screenshots/1.png" alt="Login"></img>
-</div>
+	登录
+</div>  
+
+
 
 <div align="center">
     <img align="center" src="Screenshots/2.png" alt="说说"></img>
-</div>
+	说说
+</div>  
+
+
 
 <div align="center">
     <img align="center" src="Screenshots/3.jpg" alt="说说"></img>
+	说说大图
 </div>
 
 ## 等待完成
