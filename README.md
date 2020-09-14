@@ -27,21 +27,17 @@ Visual Studio 2019 + .Net Core 3.1
 ## 界面截图
 <div align="center">
     <img align="center" src="Screenshots/1.png" alt="Login"></img>
-	登录
-</div>  
-
-
+	<p style="font-weight:bold">登录</p>
+</div>
 
 <div align="center">
     <img align="center" src="Screenshots/2.png" alt="说说"></img>
-	说说
+	<p style="font-weight:bold">说说</p>
 </div>  
-
-
 
 <div align="center">
     <img align="center" src="Screenshots/3.jpg" alt="说说"></img>
-	说说大图
+	<p style="font-weight:bold">说说大图</p>
 </div>
 
 ## 等待完成
