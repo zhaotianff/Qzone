@@ -6,8 +6,69 @@
         xmlns:tianxia="clr-namespace:TianXiaTech;assembly=BlurWindow"
         xmlns:local="clr-namespace:Qzone"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800" Background="White">
+        Height="750" Width="400" Background="White" Closing="BlurWindow_Closing" Loaded="BlurWindow_Loaded" KeyDown="BlurWindow_KeyDown">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
+        <WrapPanel VerticalAlignment="Center" Visibility="Collapsed">
+            <Image Width="80" Height="80">
+                <Image.Clip>
+                    <EllipseGeometry RadiusX="40" RadiusY="40" Center="40,40">
+                        
+                    </EllipseGeometry>
+                </Image.Clip>
+            </Image>
+            <StackPanel>
+                <Label Content="Test" FontSize="25" FontWeight="Bold" Margin="5"/>
+                <Label Content="Today is a good day" VerticalAlignment="Bottom" Margin="5,0,0,5"/>
+            </StackPanel>
+        </WrapPanel>
+
+        <StackPanel Grid.Row="1" Background="#8d93ab" Margin="1">
+            <Label Content="2020年09月02日" FontSize="20" Foreground="White" Name="lbl_Date"/>
+            <Label Content="星期五 22:00:30 " FontSize="10" Foreground="White" Name="lbl_Time"/>
+        </StackPanel>
+
+        <Grid Grid.Row="2">
+            <Border Margin="0,0,0,30" Background="Transparent" >
+
+                <Grid  Visibility="Visible">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Row="0" Margin="10,10">
+                        <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="0" FontSize="12" Name="tbox_Content" />
+
+                    </ScrollViewer>
+
+                    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Row="1">
+                        <WrapPanel Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Auto" Name="area_SuoSuoImage">
+                            
+                        </WrapPanel>
+                    </ScrollViewer>
+
+                    <WrapPanel Grid.Row="2" HorizontalAlignment="Left" Margin="10,0,10,0" Name="area_Like">
+                        
+                    </WrapPanel>
+
+                    <Grid Grid.Row="3" Margin="10,0,10,0">
+                        <Label Content="阅读：30 点赞:30" Foreground="#FF958F8F" Name="lbl_Statistics"/>
+                    </Grid>
+
+                    <StackPanel Grid.Row="4" Margin="10,0,0,10" Name="area_Comment">
+                        
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
 </tianxia:BlurWindow>

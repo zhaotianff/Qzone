@@ -9,15 +9,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Icon\avatar.jpg" />
     <None Remove="Icon\qq.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="BlurWindow" Version="2.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="PuppeteerSharp" Version="2.0.4" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Icon\avatar.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Icon\qq.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

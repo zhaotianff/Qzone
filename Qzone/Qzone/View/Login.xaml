@@ -6,8 +6,13 @@
         xmlns:local="clr-namespace:Qzone.View"
         xmlns:tianxia="clr-namespace:TianXiaTech;assembly=BlurWindow"
         mc:Ignorable="d"
-        Title="QQ登录" Height="350" Width="550" WindowStyle="SingleBorderWindow" Background="White" TitleForeground="#FF4B6CDA" Icon="../Icon/qq.png" ResizeMode="NoResize" ShowInTaskbar="False">
-    <Grid>
-        
+        Height="350" Width="550" WindowStyle="SingleBorderWindow" Background="White"  ResizeMode="NoResize" ShowInTaskbar="False" Closing="BlurWindow_Closing">
+    <Grid MouseDown="Grid_MouseDown">
+        <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Panel.ZIndex="1">
+            <Image Source="../Icon/qq.png" Width="30" Height="30" Stretch="Uniform"/>
+            <Label Content="登录" FontSize="15" FontFamily="微软雅黑"/>
+        </WrapPanel>
+
+        <Image Grid.Row="1" Name="loginImg" Stretch="UniformToFill" Panel.ZIndex="0"></Image>
     </Grid>
 </tianxia:BlurWindow>

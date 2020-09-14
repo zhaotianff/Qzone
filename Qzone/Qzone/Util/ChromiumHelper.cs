@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using PuppeteerSharp;
@@ -58,7 +60,7 @@ namespace Qzone.Util
 
                 browser = await PuppeteerSharp.Puppeteer.LaunchAsync(new PuppeteerSharp.LaunchOptions
                 {
-                    Headless = false
+                    Headless = true
                 });
 
                 page = await browser.NewPageAsync();
@@ -70,6 +72,17 @@ namespace Qzone.Util
             if(page != null)
             {
                 await page.GoToAsync(url);
+            }
+        }
+
+        /// <summary>
+        /// 二维码超时，点击刷新
+        /// </summary>
+        public async void RefreshQR()
+        {
+            if(page != null)
+            {
+                await page.ReloadAsync();
             }
         }
 
@@ -91,12 +104,53 @@ namespace Qzone.Util
             }
         }
 
-        ~ChromiumHelper()
+        public void RemoveTargetChangedHandler(EventHandler<TargetChangedArgs> eventHandler)
         {
             if (browser != null)
             {
+                browser.TargetChanged -= eventHandler;
+            }
+        }
+
+        public async Task<string> GetHtmlSource()
+        {
+            if(page != null)
+            {
+                return await page.GetContentAsync();
+            }
+
+            return "";
+        }
+
+        public async Task<string> GetHtmlSource(string url)
+        {
+            await LaunchUrl(url);
+            return await GetHtmlSource();
+        }
+
+        public async Task<string> GetS_Key()
+        {
+            if(page != null)
+            {
+                var cookies = await page.GetCookiesAsync();
+                var sKey = cookies.Where(x => x.Name == "skey").FirstOrDefault();
+
+                if (sKey == null)
+                    return "";
+                else
+                    return sKey.Value;
+            }
+
+            return "";
+        }
+
+        public async void FreeChromiumHelper()
+        {
+            if (browser != null)
+            {
+                await browser.CloseAsync();
                 browser.Disconnect();
-                browser.Dispose();
+                browser.Dispose();              
             }
         }
     }

@@ -17,5 +17,15 @@ namespace Qzone.Util
 
             await client.DownloadFileTaskAsync(new Uri(url), fileName);
         }
+
+        public static string CalcG_tk(string sKey)
+        {
+            var hash = 5381;
+            for (int i = 0, len = sKey.Length; i < len; ++i)
+            {
+                hash += (hash << 5) + (int)sKey[i];
+            }
+            return (hash & 0x7fffffff).ToString();
+        }
     }
 }
