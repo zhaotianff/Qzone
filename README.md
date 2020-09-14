@@ -1,6 +1,6 @@
 # Qzone
 > 想起那天夕阳下的奔跑，那是我逝去的青春
-随机显示一条历史说说
+随机显示一条QQ空间历史说说
 
 <p align="center">
     <img alt="Build" src="https://img.shields.io/appveyor/build/zhaotianff/Qzone" />
@@ -21,7 +21,7 @@ Visual Studio 2019 + .Net Core 3.1
 
 ## 功能说明
 扫码登录后，会随机显示一条历史说说，F5键可以刷新。  
-> 扫码链接为官方链接，请放心扫描  
+> 扫码链接为官方链接，请放心扫描    
 > 无恶意代码，不会对你的账号造成影响
 
 ## 界面截图
