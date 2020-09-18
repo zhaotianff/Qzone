@@ -22,9 +22,14 @@ namespace Qzone.Util
         public const string GetQzoneSuoSuoUrl = "https://user.qzone.qq.com/proxy/domain/taotao.qq.com/cgi-bin/emotion_cgi_msglist_v6?uin=@qq&inCharset=utf-8&outCharset=utf-8&hostUin=@qq&notice=0&sort=0&pos=@pos&num=@num&cgi_host=https%3A%2F%2Fuser.qzone.qq.com%2Fproxy%2Fdomain%2Ftaotao.qq.com%2Fcgi-bin%2Femotion_cgi_msglist_v6&code_version=1&format=json&need_private_comment=1&g_tk=@g_tk&g_tk=@g_tk";
 
         /// <summary>
-        /// //获取个人主页信息（访客、日志条数、说说条数等）
+        /// 获取个人主页信息（访客、日志条数、说说条数等）
         /// </summary>
         /// <remarks>jsonp</remarks>
         public const string GetPersonalMain = "https://user.qzone.qq.com/proxy/domain/r.qzone.qq.com/cgi-bin/main_page_cgi?uin=@qq&param=3_@qq_0%7C8_8_@qq_0_1_0_0_1%7C16&g_tk=@g_tk&g_tk=@g_tk";
+
+        /// <summary>
+        /// 获取说说点赞列表
+        /// </summary>
+        public const string GetSuoSuoLikeUrl = "https://user.qzone.qq.com/proxy/domain/taotao.qq.com/cgi-bin/emotion_cgi_msglist_v6?uin=@qq&inCharset=utf-8&outCharset=utf-8&hostUin=@qq&notice=0&sort=0&pos=@pos&num=@num&cgi_host=https%3A%2F%2Fuser.qzone.qq.com%2Fproxy%2Fdomain%2Ftaotao.qq.com%2Fcgi-bin%2Femotion_cgi_msglist_v6&code_version=1&format=jsonp&need_private_comment=1&g_tk=@g_tk&g_tk=@g_tk";
     }
 }
